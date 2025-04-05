@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            margin-bottom: 10px;
+        }
+
+        #button{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(72, 43, 107);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Hover Over Me</div>
+    <button id="button">click me</button>
+
+    <script>
+        const box = document.getElementById("box");
+        const button = document.getElementById("button")
+
+        box.addEventListener("mouseover", function () {
+            box.style.backgroundColor = "coral";
+            box.innerText = "Mouse Over!";
+        });
+
+        box.addEventListener("mouseout", function () {
+            box.style.backgroundColor = "lightblue";
+            box.innerText = "Hover Over Me";
+        });
+
+        button.addEventListener("mousedown", function () {
+            button.style.backgroundColor = "orange";
+            button.target.textContent = "clicked";
+        });
+
+        button.addEventListener("mouseup", function () {
+            button.style.backgroundColor = "yellowgreen";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clock"></p>
+    <button onclick="startClock()">Start Clock</button>
+    <button onclick="stopClock()">Stop Clock</button>
+
+    <script>
+        let intervalId;
+
+        function updateTime() {
+            const now = new Date();
+            document.getElementById("clock").innerText = now.toLocaleString();
+        }
+
+        function startClock() {
+            updateTime();
+            intervalId = setInterval(updateTime, 1000);
+        }
+
+        function stopClock() {
+            clearInterval(intervalId);
+        }
+    </script>
+</body>
+</html>
