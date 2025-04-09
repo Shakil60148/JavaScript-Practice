@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Original Text</p>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="resetText()">Reset Text</button>
+
+    <script>
+        function changeText(){
+            const text = document.getElementById("text");
+            text.innerText = "Text has been changed!";
+            text.style.color = "green"
+        }
+
+        function resetText(){
+            const text = document.getElementById("text");
+            text.innerText = "Original Text";
+            text.style.color = "black"
+        }
+    </script>
+</body>
+</html>

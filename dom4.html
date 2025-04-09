@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userInput" placeholder="Type something">
+    <button onclick="displayInput()">Show Input</button>
+    <p id="output"></p>
+    <script>
+        function displayInput() {
+            let input = document.getElementById("userInput");
+            let output = document.getElementById("output");
+            let value = input.value.trim();
+
+            if (value===""){
+                output.innerText = "Please enter something";
+            }
+            else{
+                output.innerText = "You typed: " + value;
+            }
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+    <style>
+        .calculator {
+            width: 220px;
+            margin: auto;
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .btn {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <br>
+        <button class="btn" onclick="appendValue('7')">7</button>
+        <button class="btn" onclick="appendValue('8')">8</button>
+        <button class="btn" onclick="appendValue('9')">9</button>
+        <button class="btn" onclick="appendValue('/')">/</button><br>
+
+        <button class="btn" onclick="appendValue('4')">4</button>
+        <button class="btn" onclick="appendValue('5')">5</button>
+        <button class="btn" onclick="appendValue('6')">6</button>
+        <button class="btn" onclick="appendValue('*')">*</button><br>
+
+        <button class="btn" onclick="appendValue('1')">1</button>
+        <button class="btn" onclick="appendValue('2')">2</button>
+        <button class="btn" onclick="appendValue('3')">3</button>
+        <button class="btn" onclick="appendValue('-')">-</button><br>
+
+        <button class="btn" onclick="appendValue('0')">0</button>
+        <button class="btn" onclick="appendValue('.')">.</button>
+        <button class="btn" onclick="calculate()">=</button>
+        <button class="btn" onclick="appendValue('+')">+</button><br>
+
+        <button class="btn" onclick="clearDisplay()" style="width: 190px;">Clear</button>
+    </div>
+
+    <script>
+        function appendValue(val) {
+            document.getElementById("display").value += val;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculate() {
+            try {
+                let result = eval(document.getElementById("display").value);
+                document.getElementById("display").value = result;
+            } catch {
+                alert("Invalid Expression");
+                clearDisplay();
+            }
+        }
+    </script>
+</body>
+</html>

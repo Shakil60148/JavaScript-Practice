@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="styleText">Style me!</p>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="revertStyle()">Revert Style</button>
+
+    <script>
+        function changeStyle() {
+            let element = document.getElementById("styleText");
+            element.style.color = "red";
+            element.style.fontSize = "20px";
+            element.style.fontWeight = "bold";
+            element.style.backgroundColor = "black";
+            element.style.border = "5px solid green";
+            element.style.padding = "10px";
+        }
+
+        function revertStyle() {
+            let element = document.getElementById("styleText");
+            element.style = "";
+        }
+</script>
+</body>
+</html>
